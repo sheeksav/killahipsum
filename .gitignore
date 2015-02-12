@@ -1,0 +1,12 @@
+local_settings.py
+.idea/*
+*.bak
+*.db
+.DS_Store
+*.pyc
+env/
+*.log
+*.pot
+*.rdb
+*.sql
+.coverage
