@@ -9,4 +9,3 @@ env/
 *.pot
 *.rdb
 *.sql
-.coverage
