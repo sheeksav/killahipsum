@@ -5,23 +5,64 @@
     <meta charset="UTF-8">
     <title>Ghostface Ipsum</title>
 
-    <link rel="stylsheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fillah-app.css' %}" />
 
 
 </head>
 <body>
 
+    <div class="container text-center content-container" id="">
 
-    <h1>Ghostplace Fillah</h1>
+        <h1>Ghostface Fillah Ipsum</h1>
 
-    {% for p in paragraphs %}
-
-        <p>{{ p.text }}</p>
-
-    {% endfor %}
+        <p class="lead">Fillah text for your site or project, namsayin?</p>
+        <div>&nbsp;</div>
 
 
+{#        <button id="generate-ipsum" class="btn btn-lg btn-primary">Generate Fillah Ipsum</button>#}
+
+        <a href="#" id="generate-ipsum" >
+            <img id="ghostface" class="animated wobble" src="{% static 'img/ghostface.png' %}" width="240" />
+        </a>
+
+
+        <div id="ipsum-results" style="display:none;">
+        {% for p in paragraphs %}
+
+            <p>{{ p.text }}</p>
+
+        {% endfor %}
+
+            <div>&nbsp;</div>
+            <a id="ipsum-close" class="btn btn-primary btn-lg">Close</a>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+
+        $('#generate-ipsum').click(function() {
+            event.preventDefault();
+
+            $(this).hide();
+            $('#ipsum-results').show();
+
+        });
+
+        $('#ipsum-close').click(function() {
+            $('#ipsum-results').hide();
+            $('a#generate-ipsum').show();
+
+        });
+
+    </script>
 
 
 </body>

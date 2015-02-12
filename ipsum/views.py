@@ -11,7 +11,7 @@ class IpsumHomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
 
-        paragraphs = Paragraph.objects.all()
+        paragraphs = Paragraph.objects.all()[:5]
 
         context = {
             'paragraphs': paragraphs,
